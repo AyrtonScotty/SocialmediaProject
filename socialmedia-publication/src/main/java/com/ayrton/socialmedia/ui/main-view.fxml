@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="10" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.ayrton.socialmedia.controller.MainController"
+      style="-fx-background-color: #e8eaf6;">
+
+    <!-- TITRE PRINCIPAL -->
+    <HBox alignment="CENTER">
+        <Label text="SocialMedia-Publication"
+               style="-fx-font-size: 30px; -fx-text-fill: darkslateblue; -fx-font-weight: bold;"/>
+    </HBox>
+
+    <HBox spacing="15" VBox.vgrow="ALWAYS">
+
+        <!-- TABLE -->
+        <VBox spacing="10" VBox.vgrow="ALWAYS" style="-fx-padding: 10;">
+            <TableView fx:id="tableView"
+                       prefWidth="800"
+                       prefHeight="500"
+                       style="-fx-font-size: 16px; -fx-border-color: lightgray;">
+                <columns>
+                    <TableColumn fx:id="idCol" text="UID" prefWidth="120"/>
+                    <TableColumn fx:id="authorCol" text="Auteur" prefWidth="180"/>
+                    <TableColumn fx:id="contentCol" text="Contenu" prefWidth="300"/>
+                    <TableColumn fx:id="typeCol" text="Type" prefWidth="140"/>
+                    <TableColumn fx:id="dateCol" text="Created At" prefWidth="160"/>
+                    <TableColumn fx:id="validCol" text="Validité" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+
+        <!-- BOUTONS -->
+        <VBox spacing="15" alignment="TOP_CENTER" style="-fx-padding: 10;">
+            <Button text="➕ Ajouter" onAction="#handleAdd"
+                    style="-fx-background-color: DARKSLATEBLUE; -fx-text-fill: white; -fx-min-width: 140;"/>
+            <Button text="✏️ Modifier" onAction="#handleEdit"
+                    style="-fx-background-color: DARKSLATEBLUE; -fx-text-fill: white; -fx-min-width: 140;"/>
+            <Button text="📄 Cloner" onAction="#handleClone"
+                    style="-fx-background-color: DARKSLATEBLUE; -fx-text-fill: white; -fx-min-width: 140;"/>
+            <Button text="🗑 Supprimer" onAction="#handleDelete"
+                    style="-fx-background-color: DARKSLATEBLUE; -fx-text-fill: white; -fx-min-width: 140;"/>
+            <Button text="🔄 Actualiser" onAction="#handleRefresh"
+                    style="-fx-background-color: DARKSLATEBLUE; -fx-text-fill: white; -fx-min-width: 140;"/>
+            <Button text="❌ Quitter" onAction="#handleQuit"
+                    style="-fx-background-color: DARKSLATEBLUE; -fx-text-fill: white; -fx-min-width: 140;"/>
+        </VBox>
+
+        <!-- ========================= -->
+        <!-- FORMULAIRE AMÉLIORÉ -->
+        <!-- ========================= -->
+        <VBox fx:id="form"
+              spacing="14"
+              visible="false"
+              prefWidth="380"
+              maxHeight="480"
+              alignment="TOP_CENTER"
+              style="
+                -fx-background-color: white;
+                -fx-padding: 20;
+                -fx-border-color: #d0d0d0;
+                -fx-border-radius: 10;
+                -fx-background-radius: 10;
+                -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 10, 0, 0, 3);
+              ">
+
+            <!-- HEADER + CLOSE -->
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="formHeader"
+                       text="Nouvelle Publication"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: darkslateblue;"/>
+
+                <Pane HBox.hgrow="ALWAYS"/>
+
+                <Button text="✖"
+                        onAction="#handleCloseForm"
+                        style="-fx-background-color: transparent; -fx-text-fill: red; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <Separator/>
+
+            <!-- TYPE -->
+            <VBox spacing="5">
+                <Label text="Type de publication" style="-fx-text-fill: #555;"/>
+                <ComboBox fx:id="typeBox" prefWidth="320"/>
+            </VBox>
+
+            <!-- AUTHOR -->
+            <VBox spacing="5">
+                <Label fx:id="authorLabel" text="Auteur" style="-fx-text-fill: #555;"/>
+                <TextField fx:id="authorField" promptText="Nom de l'auteur" visible="false"/>
+            </VBox>
+
+            <!-- CONTENT -->
+            <VBox spacing="5">
+                <Label fx:id="contentLabel" text="Contenu" style="-fx-text-fill: #555;"/>
+                <TextField fx:id="contentField" promptText="Contenu de la publication" visible="false"/>
+            </VBox>
+
+            <!-- EXTRA -->
+            <HBox spacing="8" alignment="CENTER_LEFT">
+                <CheckBox fx:id="extraCheck" visible="false"/>
+                <Label fx:id="extraLabel" text="" style="-fx-text-fill: #555;"/>
+            </HBox>
+
+            <!-- DURATION -->
+            <VBox spacing="5">
+                <Label fx:id="durationLabel" text="Durée (sec)" style="-fx-text-fill: #555;"/>
+                <TextField fx:id="durationField" promptText="Ex: 120" visible="false"/>
+            </VBox>
+
+            <!-- BUTTON SAVE -->
+            <Button text="Enregistrer"
+                    onAction="#handleSave"
+                    style="
+                        -fx-background-color: darkslateblue;
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-background-radius: 6;
+                        -fx-padding: 8 20;
+                    "/>
+
+        </VBox>
+
+    </HBox>
+
+</VBox>

@@ -1,0 +1,12 @@
+{
+  "type" : "FacebookVideo",
+  "id" : "e3c7be46-2962-4894-8799-b95f45f08023",
+  "author" : "2",
+  "content" : "2",
+  "createdAt" : [ 2026, 4, 16, 9, 31, 24, 51670900 ],
+  "duration" : 12,
+  "videoUrl" : null,
+  "hasCaption" : false,
+  "valid" : true,
+  "validationErrors" : [ ]
+}

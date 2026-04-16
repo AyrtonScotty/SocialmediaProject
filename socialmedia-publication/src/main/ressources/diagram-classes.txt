@@ -1,0 +1,111 @@
+@startuml
+
+' =========================
+' CLASSES ABSTRAITES
+' =========================
+
+abstract class Publication {
+  - id : String
+  - author : String
+  - content : String
+  - createdAt : LocalDateTime
+  - validationErrors : List<String>
+}
+
+abstract class TextPublication {
+  - maxLength : int
+}
+
+abstract class ImagePublication {
+  - imageUrl : String
+}
+
+abstract class VideoPublication {
+  - duration : int
+}
+
+abstract class LongVideoPublication {
+  - minLength : int
+}
+
+Publication <|-- TextPublication
+Publication <|-- ImagePublication
+Publication <|-- VideoPublication
+VideoPublication <|-- LongVideoPublication
+
+' =========================
+' TEXT — CLASSES CONCRÈTES
+' =========================
+
+class FacebookText {
+  - hasHashtags : boolean
+}
+
+class ThreadsText {
+  - isReply : boolean
+}
+
+TextPublication <|-- FacebookText
+TextPublication <|-- ThreadsText
+
+' =========================
+' IMAGE — CLASSES CONCRÈTES
+' =========================
+
+class FacebookImage {
+  - hasTagPeople : boolean
+}
+
+class InstagramImage {
+  - hasFilter : boolean
+}
+
+class TikTokImage {
+  - hasMusic : boolean
+}
+
+class ThreadsImage {
+  - isProfileImage : boolean
+}
+
+ImagePublication <|-- FacebookImage
+ImagePublication <|-- InstagramImage
+ImagePublication <|-- TikTokImage
+ImagePublication <|-- ThreadsImage
+
+' =========================
+' VIDEO — CLASSES CONCRÈTES
+' =========================
+
+class FacebookVideo {
+  - hasCaption : boolean
+}
+
+class InstagramVideo {
+  - isReel : boolean
+}
+
+class TikTokVideo {
+  - hasEffects : boolean
+}
+
+class ThreadsVideo {
+  - hasThreadLink : boolean
+}
+
+VideoPublication <|-- FacebookVideo
+VideoPublication <|-- InstagramVideo
+VideoPublication <|-- TikTokVideo
+VideoPublication <|-- ThreadsVideo
+
+' =========================
+' LONG VIDEO — CLASSE CONCRÈTE
+' =========================
+
+class YouTubeLongVideo {
+  - hasAds : boolean
+}
+
+LongVideoPublication <|-- YouTubeLongVideo
+
+@enduml

@@ -1,0 +1,12 @@
+{
+  "type" : "ThreadsVideo",
+  "id" : "df5e9fb5-84e1-4d80-87f7-a6344148c094",
+  "author" : "1",
+  "content" : "1",
+  "createdAt" : [ 2026, 4, 16, 9, 31, 18, 608878600 ],
+  "duration" : 120,
+  "videoUrl" : null,
+  "hasThreadLink" : false,
+  "valid" : true,
+  "validationErrors" : [ ]
+}

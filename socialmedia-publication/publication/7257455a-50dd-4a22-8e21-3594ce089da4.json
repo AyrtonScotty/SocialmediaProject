@@ -1,0 +1,13 @@
+{
+  "type" : "YouTubeLongVideo",
+  "id" : "7257455a-50dd-4a22-8e21-3594ce089da4",
+  "author" : "1",
+  "content" : "1",
+  "createdAt" : [ 2026, 4, 16, 9, 32, 19, 169994800 ],
+  "duration" : 120,
+  "videoUrl" : "default.mp4",
+  "minLength" : 120,
+  "hasAds" : false,
+  "valid" : true,
+  "validationErrors" : [ ]
+}

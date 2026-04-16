@@ -1,0 +1,260 @@
+===== VALIDATION DES PUBLICATIONS =====
+
+Type: FacebookText
+ID: T1
+Author: Alice
+Content: Facebook text post #hello
+CreatedAt: 2026-02-09T22:12:33.231499100
+Has Hashtags: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+Type: FacebookText
+ID: T2
+Author: Alice
+Content: 
+CreatedAt: 2026-02-09T22:12:33.233652300
+Has Hashtags: true
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - Le texte est vide.
+--------------------------------
+
+Type: ThreadsText
+ID: T3
+Author: Bob
+Content: Threads text post
+CreatedAt: 2026-02-09T22:12:33.233652300
+Is Reply: false
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+Type: ThreadsText
+ID: T4
+Author: 
+Content: Threads text post
+CreatedAt: 2026-02-09T22:12:33.233652300
+Is Reply: false
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - L'auteur est vide.
+--------------------------------
+
+ID: I1
+Author: Alice
+Content: Facebook image post
+CreatedAt: 2026-02-09T22:12:33.235161100
+ImageUrl: http://fb.jpg
+Has Tag People: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: I2
+Author: Alice
+Content: Facebook image post
+CreatedAt: 2026-02-09T22:12:33.235161100
+ImageUrl: 
+Has Tag People: false
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - L'URL de l'image est vide.
+--------------------------------
+
+ID: I3
+Author: Bob
+Content: Instagram image post
+CreatedAt: 2026-02-09T22:12:33.235161100
+ImageUrl: http://insta.png
+Has Filter: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: I4
+Author: 
+Content: Instagram image post
+CreatedAt: 2026-02-09T22:12:33.235161100
+ImageUrl: 
+Has Filter: true
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - L'auteur est vide.
+ - L'URL de l'image est vide.
+--------------------------------
+
+ID: I5
+Author: Chris
+Content: TikTok image post
+CreatedAt: 2026-02-09T22:12:33.235161100
+ImageUrl: http://tt.jpg
+Has Music: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: I6
+Author: Chris
+Content: 
+CreatedAt: 2026-02-09T22:12:33.235161100
+ImageUrl: http://tt.jpg
+Has Music: true
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - Le texte associé à l'image est vide.
+--------------------------------
+
+ID: I7
+Author: Dana
+Content: Threads image post
+CreatedAt: 2026-02-09T22:12:33.235161100
+ImageUrl: http://th.png
+Is Profile Image: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: I8
+Author: 
+Content: Threads image post
+CreatedAt: 2026-02-09T22:12:33.235161100
+ImageUrl: 
+Is Profile Image: false
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - L'auteur est vide.
+ - L'URL de l'image est vide.
+--------------------------------
+
+ID: V1
+Author: Alice
+Content: Facebook video post
+CreatedAt: 2026-02-09T22:12:33.237267100
+Duration: 120 seconds
+Has Caption: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: V2
+Author: Alice
+Content: Facebook video post
+CreatedAt: 2026-02-09T22:12:33.237267100
+Duration: 1200 seconds
+Has Caption: false
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - La durée doit être entre 1 et 600 secondes.
+ - FacebookVideo doit avoir une légende (caption).
+--------------------------------
+
+ID: V3
+Author: Bob
+Content: Instagram video post
+CreatedAt: 2026-02-09T22:12:33.237267100
+Duration: 60 seconds
+Is Reel: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: V4
+Author: 
+Content: Instagram video post
+CreatedAt: 2026-02-09T22:12:33.237267100
+Duration: 0 seconds
+Is Reel: true
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - L'auteur est vide.
+ - La durée doit être entre 1 et 120 secondes pour Instagram Reel.
+--------------------------------
+
+ID: V5
+Author: Dana
+Content: TikTok video post
+CreatedAt: 2026-02-09T22:12:33.238272400
+Duration: 30 seconds
+Has Effects: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: V6
+Author: Dana
+Content: 
+CreatedAt: 2026-02-09T22:12:33.238272400
+Duration: 0 seconds
+Has Effects: true
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - Le texte est vide.
+ - La durée doit être entre 1 et 180 secondes pour TikTok.
+--------------------------------
+
+ID: V7
+Author: Eve
+Content: Threads video post
+CreatedAt: 2026-02-09T22:12:33.238272400
+Duration: 45 seconds
+Has Thread Link: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: V8
+Author: Eve
+Content: Threads video post
+CreatedAt: 2026-02-09T22:12:33.238272400
+Duration: 0 seconds
+Has Thread Link: true
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - La durée doit être entre 1 et 300 secondes pour Threads.
+--------------------------------
+
+ID: LV1
+Author: ProYT
+Content: YouTube long video post
+CreatedAt: 2026-02-09T22:12:33.239779800
+Duration: 1800 seconds
+Has Ads: true
+--------------------------------
+✅ Statut : VALIDE
+Raison : Toutes les règles de validation sont respectées.
+--------------------------------
+
+ID: LV2
+Author: ProYT
+Content: YouTube long video post
+CreatedAt: 2026-02-09T22:12:33.239779800
+Duration: 300 seconds
+Has Ads: true
+--------------------------------
+❌ Statut : INVALIDE
+Raisons :
+ - La durée est inférieure à la durée minimale requise pour un long video (600s).
+--------------------------------
+
